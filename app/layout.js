@@ -7,7 +7,12 @@ const oswald = Oswald({
   display: 'swap',
 });
 
+const baseUrl = process.env.VERCEL_URL
+  ? `https://${process.env.VERCEL_URL}`
+  : 'http://localhost:3000';
+
 export const metadata = {
+  metadataBase: new URL(baseUrl),
   title: 'Scoars',
   description: "Today's NHL scores",
   openGraph: {
